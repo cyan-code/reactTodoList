@@ -13,7 +13,7 @@ export default class List extends Component {
             this.props.todos.map(item => {
               return (
                 <div className="column is-one-quarter" key={ item.id }>
-                  <Item { ...item } />
+                  <Item { ...item } onDel ={this.props.onDel}/>
                 </div>
               )
             })

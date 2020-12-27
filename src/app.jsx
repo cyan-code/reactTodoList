@@ -25,6 +25,12 @@ export default class app extends Component {
     })
   }
   
+  delItem = (id) => {
+    this.setState({
+      todos: this.state.todos.filter(todo => todo.id !== id)
+    })
+  }
+
   render() {
     return (
       <div>
@@ -32,7 +38,7 @@ export default class app extends Component {
         
         <Input onSubmit={this.changeState}/>
   
-        <List todos={ this.state.todos } />
+        <List todos={ this.state.todos } onDel={this.delItem} />
       </div>
     )
   }
