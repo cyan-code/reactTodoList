@@ -10,6 +10,8 @@ export default class app extends Component {
       completed: false
     }))
   }
+
+  // 定义一个向state当中添加新数据的函数，参数可以通过子组件传递过来的值进行设置
   changeState = (title) => {
     this.setState({
       todos: [
