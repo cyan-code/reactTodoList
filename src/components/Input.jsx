@@ -38,8 +38,14 @@ export default class Input extends Component {
     // 让文本框重新获得焦点
     // this.refs.myInput.focus() 已被废弃
     this.myInput.current.focus()
-
   }
+  // 敲击回车提交
+  enterHander = (e) => {
+    if(e.keyCode === 13) {
+      this.onSubmitHander(e)
+    }
+  }
+
   render() {
     return (
       <div className="field is-grouped container" style={{marginTop: '10px'}}>
@@ -49,6 +55,8 @@ export default class Input extends Component {
             placeholder="请输入新待办事项" 
             value={ this.state.inputValue }
             onChange={ this.inputHander }
+            onKeyDown={ this.enterHander }
+
             // ref= "myInput"
             ref = { this.myInput }
           />
